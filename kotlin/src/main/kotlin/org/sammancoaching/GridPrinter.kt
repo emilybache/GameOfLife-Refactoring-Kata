@@ -1,6 +1,5 @@
 package org.sammancoaching
 
-import java.util.stream.Collectors
 import kotlin.math.max
 
 
@@ -30,10 +29,7 @@ class GridPrinter {
                 }
                 allContent.add(rowContents)
             }
-            return allContent
-                .stream()
-                .map{row -> row.stream().collect(Collectors.joining(" "))}
-                .collect(Collectors.joining("\n"))
+            return allContent.map { it.joinToString(" ") }.joinToString("\n")
         }
     }
 }
